@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/finon-ios-design-system-41f10caa-b5e5-4246-b4e6-b76a48b01ca6/fonts/fonts.css">
+<link rel="stylesheet" href="_ds/finon-ios-design-system-41f10caa-b5e5-4246-b4e6-b76a48b01ca6/styles.css">
+<script src="_ds/finon-ios-design-system-41f10caa-b5e5-4246-b4e6-b76a48b01ca6/_ds_bundle.js"></script>
+<style>
+  html, body { margin:0; padding:0; background:#FFFFFF; }
+  body { font-family:Inter, system-ui, sans-serif; color:#272528; -webkit-font-smoothing:antialiased; }
+  * { box-sizing:border-box; }
+  a { color:#1D4ED8; text-decoration:none; }
+  a:hover { color:#1E40AF; text-decoration:underline; }
+</style>
+</helmet>
+
+<x-import component-from-global-scope="FinonDS.FinonPreviewProvider" hint-size="100%,100%">
+<div style="width:100%; display:grid; grid-template-columns:400px 1fr; align-items:start;">
+
+  <aside style="position:sticky; top:0; height:100vh; background:#F0F3F8; border-right:1px solid #DCDCDC; padding:56px 40px; display:flex; flex-direction:column; justify-content:space-between;">
+    <div>
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#1D4ED8;">Calgary, Alberta</div>
+      <h1 style="margin:18px 0 0; font-size:44px; line-height:1.05; font-weight:700; letter-spacing:-0.03em;">Macfrancis Belchi</h1>
+      <p style="margin:18px 0 0; font-size:16px; line-height:1.5; font-weight:600; color:#4A484C;">Systems Administrator | Service Desk | Server &amp; Infrastructure Management</p>
+      <div style="margin-top:32px; display:flex; flex-direction:column; gap:8px;">
+        <a href="#skills" style="font-size:15px; font-weight:600; color:#807E83;" style-hover="color:#1D4ED8; text-decoration:none">Technical skills</a>
+        <a href="#certifications" style="font-size:15px; font-weight:600; color:#807E83;" style-hover="color:#1D4ED8; text-decoration:none">Certifications</a>
+        <a href="#education" style="font-size:15px; font-weight:600; color:#807E83;" style-hover="color:#1D4ED8; text-decoration:none">Education</a>
+      </div>
+      <div style="margin-top:36px; width:280px;">
+        <a href="mailto:macfrancis.belchi@outlook.com" style="display:block;" style-hover="text-decoration:none">
+          <x-import component-from-global-scope="FinonDS.Button" hint-size="280px,48px">Get in touch</x-import>
+        </a>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:6px; font-size:14px; color:#807E83;">
+      <a href="mailto:macfrancis.belchi@outlook.com" style="font-size:14px; font-weight:600; color:#1D4ED8;">macfrancis.belchi@outlook.com</a>
+      <a href="tel:5879372691" style="font-size:14px; font-weight:600; color:#4A484C;" style-hover="color:#1D4ED8">587-937-2691</a>
+      <span>English &mdash; Advanced</span>
+    </div>
+  </aside>
+
+  <main style="min-width:0;">
+
+    <section style="padding:80px 72px 64px; border-bottom:1px solid #DCDCDC;">
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#807E83;">Professional summary</div>
+      <p style="margin:24px 0 0; font-size:20px; line-height:1.65; color:#272528; max-width:70ch; text-wrap:pretty;">{{ summary }}</p>
+      <div style="display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:24px 48px; margin-top:48px; max-width:640px;">
+        <div style="padding-top:20px; border-top:2px solid #1D4ED8;">
+          <x-import component-from-global-scope="FinonDS.DataPoint" label="Years of experience" value="5" hint-size="100%,52px"></x-import>
+        </div>
+        <div style="padding-top:20px; border-top:2px solid #1D4ED8;">
+          <x-import component-from-global-scope="FinonDS.DataPoint" label="Users supported across NA &amp; Europe" value="450+" hint-size="100%,52px"></x-import>
+        </div>
+        <div style="padding-top:20px; border-top:2px solid #1D4ED8;">
+          <x-import component-from-global-scope="FinonDS.DataPoint" label="Reduction in vulnerable user alerts" value="95%" hint-size="100%,52px"></x-import>
+        </div>
+        <div style="padding-top:20px; border-top:2px solid #1D4ED8;">
+          <x-import component-from-global-scope="FinonDS.DataPoint" label="Customer satisfaction rating" value="95.1%" hint-size="100%,52px"></x-import>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" style="padding:80px 72px;">
+      <h2 style="margin:0 0 8px; font-size:32px; font-weight:700; letter-spacing:-0.025em;">Technical skills</h2>
+      <p style="margin:0 0 48px; font-size:16px; color:#807E83;">Grouped by discipline.</p>
+      <div style="display:flex; flex-direction:column; gap:32px;">
+        <sc-for list="{{ skillGroups }}" as="group" hint-placeholder-count="6">
+          <div style="display:grid; grid-template-columns:200px 1fr; gap:32px; align-items:start; padding-top:24px; border-top:1px solid #DCDCDC;">
+            <div style="font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#1D4ED8; line-height:1.4;">{{ group.label }}</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <sc-for list="{{ group.items }}" as="item" hint-placeholder-count="4">
+                <x-import component-from-global-scope="FinonDS.Tag" text="{{ item }}" background-color="#F0F3F8" text-color="#272528" hint-size="auto,28px"></x-import>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="certifications" style="padding:80px 72px; background:#F4F4F2; border-top:1px solid #DCDCDC; border-bottom:1px solid #DCDCDC;">
+      <h2 style="margin:0 0 48px; font-size:32px; font-weight:700; letter-spacing:-0.025em;">Certifications</h2>
+      <div style="display:flex; flex-direction:column; gap:0;">
+        <sc-for list="{{ certs }}" as="c" hint-placeholder-count="6">
+          <div style="display:grid; grid-template-columns:160px 1fr; gap:32px; align-items:baseline; padding:20px 0; border-top:1px solid #DCDCDC;">
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#807E83;">{{ c.issuer }}</div>
+            <div style="font-size:18px; font-weight:700; letter-spacing:-0.01em;">{{ c.name }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="education" style="padding:80px 72px;">
+      <h2 style="margin:0 0 40px; font-size:32px; font-weight:700; letter-spacing:-0.025em;">Education</h2>
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div style="padding-top:20px; border-top:1px solid #DCDCDC; font-size:18px; font-weight:600;">Diploma, IT Services &mdash; SAIT, Calgary, AB</div>
+        <div style="padding-top:20px; border-top:1px solid #DCDCDC; font-size:18px; font-weight:600;">Bachelor of Engineering &mdash; University of Port Harcourt</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const SUMMARY = "Systems Administrator with 5 years of progressive experience spanning infrastructure maintenance, service desk ownership and endpoint management. Proven ability to mentor and collaborate, drive first-touch resolution rates, and build scalable processes through SOPs and structured workflows. Deep hands-on expertise in virtualization, Mobile device management, server provisioning, M365 ecosystem administration, platforms administration, security patching, and enterprise backup solutions. Adept at balancing strategic infrastructure projects with urgent desk-side support, with a security-first mindset and a track record of measurable improvements.";
+
+const SKILL_GROUPS = [
+  { label: "Virtualization & servers", items: ["Hyper-V / VMware Virtualization", "Windows Server 2008–2025 Administration", "HCI Infrastructure"] },
+  { label: "Identity & cloud", items: ["Azure AD / Active Directory", "Microsoft 365 (M365) Administration", "Google Cloud Platform Administrator"] },
+  { label: "Endpoint & MDM", items: ["Microsoft Intune & Autopilot", "Endpoint MDM & Device Lifecycle Management", "Applications provisioning (Win32, MSI, DMG, PKG)"] },
+  { label: "Security", items: ["Security Patching (Servers & Workstations)", "Firewall Configuration & Security Hardening", "ESET", "Zscaler", "Cisco", "Fortinet"] },
+  { label: "Networking, backup & monitoring", items: ["VLANs, VPNs, Networks, Monitoring", "Veeam Backup and Recovery", "Centreon", "Grafana"] },
+  { label: "Process & people", items: ["PowerShell / Automation", "ITSM / Ticketing (ServiceNow, JIRA)", "SOP Creation & Process Improvement", "Team Mentoring & Leadership"] }
+];
+
+const CERTS = [
+  { issuer: "Microsoft", name: "AZ-104: Azure Administrator" },
+  { issuer: "Cisco", name: "CCNA 200-301: Certified Network Associate" },
+  { issuer: "Microsoft", name: "SC-900: Security & Compliance" },
+  { issuer: "Cisco", name: "CCNA — Routing, Switching & Wireless" },
+  { issuer: "Palo Alto", name: "Cybersecurity Foundations & Network Security" },
+  { issuer: "ServiceNow", name: "Platform Essentials" }
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    return { summary: SUMMARY, skillGroups: SKILL_GROUPS, certs: CERTS };
+  }
+}
+</script>
+</body>
+</html>
