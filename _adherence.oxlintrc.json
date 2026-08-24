@@ -1,0 +1,505 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": [
+          {
+            "element": "button",
+            "message": "Use <Button> from the design system instead of <button>."
+          },
+          {
+            "element": "input",
+            "message": "Use <Input> from the design system instead of <input>."
+          }
+        ]
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/atoms/AddAssetButton/**",
+              "components/atoms/AssetSquareCard/**",
+              "components/atoms/BackButton/**",
+              "components/atoms/Button/**",
+              "components/atoms/Change/**",
+              "components/atoms/ChartTimeButton/**",
+              "components/atoms/ConnectionTag/**",
+              "components/atoms/Input/**",
+              "components/atoms/LabelChange/**",
+              "components/atoms/Tag/**",
+              "components/atoms/TransactionTag/**",
+              "components/general/MenuOption/**",
+              "components/general/MenuTrigger/**",
+              "components/general/StepAuth/**",
+              "components/general/StepDone/**",
+              "components/general/StepError/**",
+              "components/general/StepFileImport/**",
+              "components/general/StepKeyCredentials/**",
+              "components/general/StepStart/**",
+              "components/markets/CryptoContent/**",
+              "components/markets/StockContent/**",
+              "components/molecules/AssetCardInfo/**",
+              "components/molecules/ChartAssetInfo/**",
+              "components/molecules/ChartCard/**",
+              "components/molecules/ChartCardInfo/**",
+              "components/molecules/ChartInfo/**",
+              "components/molecules/ConnectCard/**",
+              "components/molecules/ConnectionCard/**",
+              "components/molecules/ConnectionSettingCard/**",
+              "components/molecules/DashboardAssetCard/**",
+              "components/molecules/DataPoint/**",
+              "components/molecules/DropdownMenu/**",
+              "components/molecules/FiatCard/**",
+              "components/molecules/Header/**",
+              "components/molecules/HeaderAssetType/**",
+              "components/molecules/IsaAllowanceCard/**",
+              "components/molecules/Pagination/**",
+              "components/molecules/PriceRange/**",
+              "components/molecules/SearchBar/**",
+              "components/molecules/SearchToggle/**",
+              "components/molecules/SelectionGroup/**",
+              "components/molecules/SettingRow/**",
+              "components/molecules/TextContainerButton/**",
+              "components/molecules/TransactionCard/**",
+              "components/organisms/AssetAllocationCard/**",
+              "components/organisms/BottomModal/**",
+              "components/organisms/ChartAsset/**",
+              "components/organisms/ChartInsights/**",
+              "components/organisms/CompanyInformation/**",
+              "components/organisms/ConnectionIssueModal/**",
+              "components/organisms/DashboardList/**",
+              "components/organisms/HorizontalNav/**",
+              "components/organisms/LoadingOverlay/**",
+              "components/organisms/MarketData/**",
+              "components/organisms/MarketsSection/**",
+              "components/organisms/NetChartCard/**",
+              "components/organisms/Paywall/**",
+              "components/organisms/PlatformSteps/**",
+              "components/organisms/PortfolioChart/**",
+              "components/organisms/ProfileHeader/**",
+              "components/organisms/VerificationCode/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Inter))/i]",
+        "message": "Font not provided by the design system. Available: Inter."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AddAssetButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:to|key|ref|className|style|children)$/]",
+        "message": "<AddAssetButton> doesn't accept that prop. Declared props: to."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AssetCardInfo'] > JSXAttribute > JSXIdentifier[name!=/^(?:asset|setTotalAmount|key|ref|className|style|children)$/]",
+        "message": "<AssetCardInfo> doesn't accept that prop. Declared props: asset, setTotalAmount."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AssetSquareCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:type|icon|key|ref|className|style|children)$/]",
+        "message": "<AssetSquareCard> doesn't accept that prop. Declared props: type, icon."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BackButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:to|onPress|direction|key|ref|className|style|children)$/]",
+        "message": "<BackButton> doesn't accept that prop. Declared props: to, onPress, direction."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BackButton'] > JSXAttribute[name.name='direction'] > Literal[value!=/^(?:left|right)$/]",
+        "message": "<BackButton> direction must be one of 'left' | 'right'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BottomModal'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|key|ref|className|style|children)$/]",
+        "message": "<BottomModal> doesn't accept that prop. Declared props: children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|outline|onPress|color|isDisabled|style|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: children, outline, onPress, color, isDisabled, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Change'] > JSXAttribute > JSXIdentifier[name!=/^(?:amount|percentage|key|ref|className|style|children)$/]",
+        "message": "<Change> doesn't accept that prop. Declared props: amount, percentage."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChartCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:type|key|ref|className|style|children)$/]",
+        "message": "<ChartCard> doesn't accept that prop. Declared props: type."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChartCardInfo'] > JSXAttribute > JSXIdentifier[name!=/^(?:amount|key|ref|className|style|children)$/]",
+        "message": "<ChartCardInfo> doesn't accept that prop. Declared props: amount."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChartInfo'] > JSXAttribute > JSXIdentifier[name!=/^(?:totalAmount|key|ref|className|style|children)$/]",
+        "message": "<ChartInfo> doesn't accept that prop. Declared props: totalAmount."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChartInsights'] > JSXAttribute > JSXIdentifier[name!=/^(?:data|key|ref|className|style|children)$/]",
+        "message": "<ChartInsights> doesn't accept that prop. Declared props: data."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChartTimeButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:time|onPress|active|isDisabled|key|ref|className|style|children)$/]",
+        "message": "<ChartTimeButton> doesn't accept that prop. Declared props: time, onPress, active, isDisabled."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChartTimeButton'] > JSXAttribute[name.name='time'] > Literal[value!=/^(?:1d|7d|3m|1y|all)$/]",
+        "message": "<ChartTimeButton> time must be one of '1d' | '7d' | '3m' | '1y' | 'all'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ConnectCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:to|text|key|ref|className|style|children)$/]",
+        "message": "<ConnectCard> doesn't accept that prop. Declared props: to, text."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ConnectionCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:text|tags|isAvailable|isConnected|institutionId|institutionName|provider|key|ref|className|style|children)$/]",
+        "message": "<ConnectionCard> doesn't accept that prop. Declared props: text, tags, isAvailable, isConnected, institutionId, institutionName, provider."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ConnectionIssueModal'] > JSXAttribute > JSXIdentifier[name!=/^(?:modalRef|key|ref|className|style|children)$/]",
+        "message": "<ConnectionIssueModal> doesn't accept that prop. Declared props: modalRef."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ConnectionSettingCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:connection|key|ref|className|style|children)$/]",
+        "message": "<ConnectionSettingCard> doesn't accept that prop. Declared props: connection."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ConnectionTag'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|key|ref|className|style|children)$/]",
+        "message": "<ConnectionTag> doesn't accept that prop. Declared props: children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DashboardList'] > JSXAttribute > JSXIdentifier[name!=/^(?:type|assets|key|ref|className|style|children)$/]",
+        "message": "<DashboardList> doesn't accept that prop. Declared props: type, assets."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DataPoint'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|value|key|ref|className|style|children)$/]",
+        "message": "<DataPoint> doesn't accept that prop. Declared props: label, value."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DropdownMenu'] > JSXAttribute > JSXIdentifier[name!=/^(?:visible|handleClose|handleOpen|trigger|children|dropdownWidth|key|ref|className|style|children)$/]",
+        "message": "<DropdownMenu> doesn't accept that prop. Declared props: visible, handleClose, handleOpen, trigger, children, dropdownWidth."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FiatCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:asset|setTotalAmount|key|ref|className|style|children)$/]",
+        "message": "<FiatCard> doesn't accept that prop. Declared props: asset, setTotalAmount."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Header'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|subtitle|goBack|to|children|customGoBack|key|ref|className|style|children)$/]",
+        "message": "<Header> doesn't accept that prop. Declared props: title, subtitle, goBack, to, children, customGoBack."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HeaderAssetType'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|img|price|key|ref|className|style|children)$/]",
+        "message": "<HeaderAssetType> doesn't accept that prop. Declared props: name, img, price."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HorizontalNav'] > JSXAttribute > JSXIdentifier[name!=/^(?:list|active|setActive|key|ref|className|style|children)$/]",
+        "message": "<HorizontalNav> doesn't accept that prop. Declared props: list, active, setActive."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Input'] > JSXAttribute > JSXIdentifier[name!=/^(?:type|value|onChange|placeholder|icon|key|ref|className|style|children)$/]",
+        "message": "<Input> doesn't accept that prop. Declared props: type, value, onChange, placeholder, icon."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Input'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:password|email|username|verify|code)$/]",
+        "message": "<Input> type must be one of 'password' | 'email' | 'username' | 'verify' | 'code'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LabelChange'] > JSXAttribute > JSXIdentifier[name!=/^(?:number|key|ref|className|style|children)$/]",
+        "message": "<LabelChange> doesn't accept that prop. Declared props: number."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LoadingOverlay'] > JSXAttribute > JSXIdentifier[name!=/^(?:visible|key|ref|className|style|children)$/]",
+        "message": "<LoadingOverlay> doesn't accept that prop. Declared props: visible."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MarketsSection'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|target|type|key|ref|className|style|children)$/]",
+        "message": "<MarketsSection> doesn't accept that prop. Declared props: title, target, type."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MenuOption'] > JSXAttribute > JSXIdentifier[name!=/^(?:onSelect|children|style|key|ref|className|style|children)$/]",
+        "message": "<MenuOption> doesn't accept that prop. Declared props: onSelect, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MenuTrigger'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|key|ref|className|style|children)$/]",
+        "message": "<MenuTrigger> doesn't accept that prop. Declared props: children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pagination'] > JSXAttribute > JSXIdentifier[name!=/^(?:position|total|key|ref|className|style|children)$/]",
+        "message": "<Pagination> doesn't accept that prop. Declared props: position, total."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PlatformSteps'] > JSXAttribute > JSXIdentifier[name!=/^(?:routeOnFinish|key|ref|className|style|children)$/]",
+        "message": "<PlatformSteps> doesn't accept that prop. Declared props: routeOnFinish."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PortfolioChart'] > JSXAttribute > JSXIdentifier[name!=/^(?:filter|key|ref|className|style|children)$/]",
+        "message": "<PortfolioChart> doesn't accept that prop. Declared props: filter."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PriceRange'] > JSXAttribute > JSXIdentifier[name!=/^(?:low|high|price|key|ref|className|style|children)$/]",
+        "message": "<PriceRange> doesn't accept that prop. Declared props: low, high, price."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SearchBar'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|setValue|autoFocus|key|ref|className|style|children)$/]",
+        "message": "<SearchBar> doesn't accept that prop. Declared props: value, setValue, autoFocus."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SelectionGroup'] > JSXAttribute > JSXIdentifier[name!=/^(?:options|type|questionId|setResponse|key|ref|className|style|children)$/]",
+        "message": "<SelectionGroup> doesn't accept that prop. Declared props: options, type, questionId, setResponse."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SelectionGroup'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:single-select|multiple-select)$/]",
+        "message": "<SelectionGroup> type must be one of 'single-select' | 'multiple-select'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StepAuth'] > JSXAttribute > JSXIdentifier[name!=/^(?:target|onPress|key|ref|className|style|children)$/]",
+        "message": "<StepAuth> doesn't accept that prop. Declared props: target, onPress."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StepDone'] > JSXAttribute > JSXIdentifier[name!=/^(?:routeTo|key|ref|className|style|children)$/]",
+        "message": "<StepDone> doesn't accept that prop. Declared props: routeTo."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StepFileImport'] > JSXAttribute > JSXIdentifier[name!=/^(?:target|onPress|step|state|key|ref|className|style|children)$/]",
+        "message": "<StepFileImport> doesn't accept that prop. Declared props: target, onPress, step, state."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StepKeyCredentials'] > JSXAttribute > JSXIdentifier[name!=/^(?:target|onPress|step|state|key|ref|className|style|children)$/]",
+        "message": "<StepKeyCredentials> doesn't accept that prop. Declared props: target, onPress, step, state."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StepStart'] > JSXAttribute > JSXIdentifier[name!=/^(?:target|onPress|key|ref|className|style|children)$/]",
+        "message": "<StepStart> doesn't accept that prop. Declared props: target, onPress."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tag'] > JSXAttribute > JSXIdentifier[name!=/^(?:text|backgroundColor|textColor|key|ref|className|style|children)$/]",
+        "message": "<Tag> doesn't accept that prop. Declared props: text, backgroundColor, textColor."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextContainerButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|subTitle|buttonText|to|key|ref|className|style|children)$/]",
+        "message": "<TextContainerButton> doesn't accept that prop. Declared props: title, subTitle, buttonText, to."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TransactionCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:data|key|ref|className|style|children)$/]",
+        "message": "<TransactionCard> doesn't accept that prop. Declared props: data."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TransactionTag'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|key|ref|className|style|children)$/]",
+        "message": "<TransactionTag> doesn't accept that prop. Declared props: children."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "AddAssetButton": {
+        "replaces": []
+      },
+      "AssetAllocationCard": {
+        "replaces": []
+      },
+      "AssetCardInfo": {
+        "replaces": []
+      },
+      "AssetSquareCard": {
+        "replaces": []
+      },
+      "BackButton": {
+        "replaces": []
+      },
+      "BottomModal": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": [
+          "button"
+        ]
+      },
+      "Change": {
+        "replaces": []
+      },
+      "ChartAsset": {
+        "replaces": []
+      },
+      "ChartAssetInfo": {
+        "replaces": []
+      },
+      "ChartCard": {
+        "replaces": []
+      },
+      "ChartCardInfo": {
+        "replaces": []
+      },
+      "ChartInfo": {
+        "replaces": []
+      },
+      "ChartInsights": {
+        "replaces": []
+      },
+      "ChartTimeButton": {
+        "replaces": []
+      },
+      "CompanyInformation": {
+        "replaces": []
+      },
+      "ConnectCard": {
+        "replaces": []
+      },
+      "ConnectionCard": {
+        "replaces": []
+      },
+      "ConnectionIssueModal": {
+        "replaces": []
+      },
+      "ConnectionSettingCard": {
+        "replaces": []
+      },
+      "ConnectionTag": {
+        "replaces": []
+      },
+      "CryptoContent": {
+        "replaces": []
+      },
+      "DashboardAssetCard": {
+        "replaces": []
+      },
+      "DashboardList": {
+        "replaces": []
+      },
+      "DataPoint": {
+        "replaces": []
+      },
+      "DropdownMenu": {
+        "replaces": []
+      },
+      "FiatCard": {
+        "replaces": []
+      },
+      "Header": {
+        "replaces": []
+      },
+      "HeaderAssetType": {
+        "replaces": []
+      },
+      "HorizontalNav": {
+        "replaces": []
+      },
+      "Input": {
+        "replaces": [
+          "input"
+        ]
+      },
+      "IsaAllowanceCard": {
+        "replaces": []
+      },
+      "LabelChange": {
+        "replaces": []
+      },
+      "LoadingOverlay": {
+        "replaces": []
+      },
+      "MarketData": {
+        "replaces": []
+      },
+      "MarketsSection": {
+        "replaces": []
+      },
+      "MenuOption": {
+        "replaces": []
+      },
+      "MenuTrigger": {
+        "replaces": []
+      },
+      "NetChartCard": {
+        "replaces": []
+      },
+      "Pagination": {
+        "replaces": []
+      },
+      "Paywall": {
+        "replaces": []
+      },
+      "PlatformSteps": {
+        "replaces": []
+      },
+      "PortfolioChart": {
+        "replaces": []
+      },
+      "PriceRange": {
+        "replaces": []
+      },
+      "ProfileHeader": {
+        "replaces": []
+      },
+      "SearchBar": {
+        "replaces": []
+      },
+      "SearchToggle": {
+        "replaces": []
+      },
+      "SelectionGroup": {
+        "replaces": []
+      },
+      "SettingRow": {
+        "replaces": []
+      },
+      "StepAuth": {
+        "replaces": []
+      },
+      "StepDone": {
+        "replaces": []
+      },
+      "StepError": {
+        "replaces": []
+      },
+      "StepFileImport": {
+        "replaces": []
+      },
+      "StepKeyCredentials": {
+        "replaces": []
+      },
+      "StepStart": {
+        "replaces": []
+      },
+      "StockContent": {
+        "replaces": []
+      },
+      "Tag": {
+        "replaces": []
+      },
+      "TextContainerButton": {
+        "replaces": []
+      },
+      "TransactionCard": {
+        "replaces": []
+      },
+      "TransactionTag": {
+        "replaces": []
+      },
+      "VerificationCode": {
+        "replaces": []
+      }
+    },
+    "tokens": [],
+    "tokenKinds": {},
+    "fontFamilies": [
+      "Inter"
+    ]
+  }
+}
